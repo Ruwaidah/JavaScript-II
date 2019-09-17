@@ -3,6 +3,23 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function mixingColors(){
+  c1 = "blue";
+  c2 = "yellow";
+  function green(){
+    console.log(`mixing ${c1} with ${c2} will give us the color Green`);
+    c3 = "green";
+    function cyan(){
+      console.log(`lights mix ${c3} and ${c1} the result is a cyan color`);
+    }
+    cyan();
+  }
+  green();
+}
+mixingColors();
+
+
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
