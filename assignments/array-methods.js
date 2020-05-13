@@ -58,7 +58,7 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
-runners.forEach( word => fullNames.push(`${word.first_name}  ${word.last_name}`));
+runners.forEach( word => fullNames.push(`${word.first_name} ${word.last_name}`));
 console.log(fullNames);
 
 
@@ -110,3 +110,8 @@ console.log(XL_size);
 
 
 // Problem 3
+// take all the names with donation more than 200
+let firstname = [];
+let heighdonation = runners.filter( elem => elem.donation >= 200);
+heighdonation.forEach(elem => firstname.push(elem.first_name));
+console.log(firstname)
