@@ -41,29 +41,85 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+function length(arrlength) {
+  return console.log(arrlength);
+}
+getLength(items,length);
+
+
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1]);
 }
+function lastitem(last_item){
+  return console.log(last_item);
+}
+last(items,lastitem);
+
+
+
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+function adding(sum){
+  console.log(sum);
+}
+sumNums(3,4,adding);
+
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+function multi(numbers){
+  console.log(numbers);
+}
+multiplyNums(3,3,multi);
+
+
+
+
 
 function contains(item, list, cb) {
+    let newword = list.filter(word => item == word);
   // contains checks if an item is present inside of the given array/list.
+    if (newword.length >= 1){
+      return cb(true);
+    }else{
+      return cb(false);
+    }
   // Pass true to the callback if it is, otherwise pass false.
 }
+function check(bol){
+  console.log(bol);
+}
+myword = "yo-yo";
+contains(myword, items, check);
+
+
+
+
 
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
+  let uniqueArray = array.filter((elem, index) => array.indexOf(elem) >= index)
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(uniqueArray);
 }
+
+function newarray(newarra){
+  console.log(newarra);
+}
+removeDuplicates(items,newarray)
